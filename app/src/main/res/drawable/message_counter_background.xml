@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--
+        Если вам нужно сделать круг, который будет действительно кругом,
+        то лучше верхнему тегу shape добавить атрибут
+        android:shape="oval"
+
+        У нас же другая задача - сделать такой круг, который бы
+        умел растягиваться, но при этом не терял бы скругления,
+        поэтому добавляем поведение для углов формы
+    -->
+    <solid android:color="#00CB58" />
+    <corners android:radius="1000dp"/>
+</shape>

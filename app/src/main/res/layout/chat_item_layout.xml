@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/chat_avatar"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@drawable/no_avatar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/chat_username"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/chat_message_preview_barrier"
+        app:layout_constraintStart_toEndOf="@id/chat_avatar"
+        app:layout_constraintTop_toTopOf="@id/chat_avatar"
+        tools:text="User name" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/chat_message_preview"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        app:layout_constraintEnd_toStartOf="@id/chat_message_preview_barrier"
+        app:layout_constraintStart_toStartOf="@id/chat_username"
+        app:layout_constraintTop_toBottomOf="@id/chat_username"
+        tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at augue eu velit dictum vulputate. Etiam eu arcu eleifend, mollis." />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/chat_message_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/chat_message_preview_barrier"
+        android:layout_marginStart="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="12:56" />
+
+    <!--
+        Этот элемент (Barrier) фактически так же является View, однако
+        предназначен исключительно для создания "предела (барьера)",
+        до которого можно constraint'ами других View в ConstraintLayout
+
+        Например, таким образом здесь мы не позволяем тексту утекать дальше,
+        чем максимальный из двух элементов правее этого барьера (время и счётчик).
+
+        (Тень добавляется только чтобы барьер было видно в "дизайнере".
+        Фактически на итоговой вёрстке тени не будет)
+    -->
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/chat_message_preview_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="chat_message_counter,chat_message_time" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/chat_message_counter"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:minWidth="24dp"
+        android:background="@drawable/message_counter_background"
+        android:gravity="center"
+        android:paddingHorizontal="6dp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

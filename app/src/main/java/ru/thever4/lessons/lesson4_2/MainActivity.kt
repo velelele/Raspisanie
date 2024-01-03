@@ -3,6 +3,7 @@ package ru.thever4.lessons.lesson4_2
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ru.thever4.lessons.lesson4_2.databinding.ActivityMainBinding
+import ru.thever4.lessons.lesson4_2.fragments.MainFragment
 
 class MainActivity : AppCompatActivity() {
 

@@ -9,8 +9,6 @@
         android:id="@+id/day_info"
         android:layout_width="wrap_content"
         android:layout_height="?attr/actionBarSize"
-        android:text="Информация про день"
-        android:textSize="25dp"
         android:gravity="start|center_vertical"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/r_view_today"

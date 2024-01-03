@@ -4,9 +4,7 @@
     <item android:id="@+id/navigation_day"
         android:icon="@drawable/day_icon"
         android:title="Сегодня"/>
-
     <item android:id="@+id/navigation_week"
         android:icon="@drawable/week_icon"
         android:title="Неделя"/>
-
 </menu>

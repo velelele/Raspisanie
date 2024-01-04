@@ -25,7 +25,8 @@
         app:layout_constraintEnd_toEndOf="@+id/time_start"
         app:layout_constraintStart_toStartOf="@+id/time_start"
         app:layout_constraintTop_toBottomOf="@id/time_start"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5dp"
+        android:alpha="0.7"
         />
 
     <com.google.android.material.textview.MaterialTextView
@@ -50,7 +51,8 @@
         app:layout_constraintTop_toTopOf="@+id/time_start"
         app:layout_constraintBottom_toBottomOf="@+id/time_end"
         app:layout_constraintStart_toEndOf="@+id/time_start"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="10dp"
+        android:alpha="0.7"
         />
 
     <com.google.android.material.textview.MaterialTextView
@@ -63,6 +65,7 @@
         app:layout_constraintTop_toBottomOf="@+id/audience"
         android:layout_marginTop="4dp"
         app:layout_constraintHorizontal_bias="0.0"
+        android:alpha="0.7"
         />
 
     <androidx.constraintlayout.widget.Barrier

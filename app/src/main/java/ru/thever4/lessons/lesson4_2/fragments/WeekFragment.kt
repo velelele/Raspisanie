@@ -31,17 +31,11 @@ class WeekFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.rViewWeek.layoutManager = LinearLayoutManager(requireContext())
         binding.rViewWeek.adapter = daysAdapter
-
         updateSchedule()
-
-
         binding.changeWeekButton.setOnClickListener {
-
             currentWeek = if (currentWeek == 1) 2 else 1
-
             updateSchedule()
         }
     }

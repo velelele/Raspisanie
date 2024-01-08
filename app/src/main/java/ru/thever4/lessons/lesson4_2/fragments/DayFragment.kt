@@ -36,16 +36,17 @@ class DayFragment : Fragment() {
         binding.rViewToday.layoutManager = LinearLayoutManager(requireContext())
         binding.rViewToday.adapter = daysAdapter
 
-
         val todayDayOfWeek = LocalDate.now().dayOfWeek
-
-
         val todayData = ScheduleData.scheduleFirstWeek.filter { day ->
             getDayOfWeekFromString(day.ofWeek) == todayDayOfWeek
         }
 
-
-        daysAdapter.submitList(todayData)
+        if (todayData.isEmpty()) {
+            binding.dayInfo.visibility = View.VISIBLE
+        } else {
+            binding.dayInfo.visibility = View.GONE
+            daysAdapter.submitList(todayData)
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
